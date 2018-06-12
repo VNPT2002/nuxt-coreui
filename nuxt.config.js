@@ -72,6 +72,19 @@ module.exports = {
       }
     }
   }
+  ,
+  router: {
+    base:'/',
+    middleware: 'authenticated'
+  },
+  modules: [
+    '@nuxtjs/axios'
+  ],
+  axios: {
+    prefix: '/api',
+    host: 'localhost',
+    port: '8080'
+  }
 }
 
 function changeLoaderOptions (loaders) {
