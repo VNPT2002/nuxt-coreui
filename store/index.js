@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import Cookie from 'js-cookie'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -38,6 +39,7 @@ const createStore = () => {
             }  
           })
           window.sessionStorage.setItem("token", res.data.token)
+          Cookie.set('jwt', res.data.token)
           commit('SET_USER', res.data.token)
           this.$router.push('/')
         }catch (error) {
