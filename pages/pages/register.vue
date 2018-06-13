@@ -57,6 +57,7 @@
 <script>
 export default {
   name: 'Register',
-  layout: 'clean'
+  layout: 'clean',
+  middleware: 'anonymous'
 }
 </script>

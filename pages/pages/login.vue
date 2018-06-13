@@ -32,11 +32,10 @@
 
 <script>
 
-import { mapState } from 'vuex'
-
 export default {
   name: "Login",
   layout: "clean",
+  middleware: 'anonymous',
   data() {
     return {
       formError: null,
@@ -44,9 +43,6 @@ export default {
       formPassword: ""
     };
   },
-  computed: mapState([
-    'authUser'
-  ]),
   methods: {
     login() {      
       try {

@@ -1,4 +1,3 @@
-
 const getQueryParams = () => {
   const params = {}
   window.location.href.replace(/([^(?|#)=&]+)(=([^&]*))?/g, ($0, $1, $2, $3) => {
@@ -15,7 +14,7 @@ export const getUserFromCookie = (req) => {
   return jwt
 }
 
-export const getUserFromLocalStorage = () => {
-  const json = window.sessionStorage.token
-  return json ? JSON.parse(json) : undefined
+export const getUserFromSessionStorage = () => {
+  const json = window.sessionStorage.getItem("token")
+  return json
 }

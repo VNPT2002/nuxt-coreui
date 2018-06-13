@@ -1,5 +1,8 @@
+import Vue from 'vue'
 import Vuex from 'vuex'
 import Cookie from 'js-cookie'
+
+Vue.use(Vuex)
 
 const createStore = () => {
   return new Vuex.Store({
@@ -15,7 +18,7 @@ const createStore = () => {
       }
     },
     mutations: {
-      SET_USER: function (state, user) {
+      SET_USER: function (state, user) {       
         state.authUser = user
       }
     },
@@ -26,29 +29,28 @@ const createStore = () => {
           commit('SET_USER', req.session.authUser)
         }
       },
-      async login({ commit }, { user, pwd }){
+      async login({ commit }, { user, pwd }) {
         try {
           let pars = JSON.stringify({
-                username: user,
-                password: pwd
+            username: user,
+            password: pwd
           })
 
-          let res  = await this.$axios.post('/auth', pars,{
+          let res = await this.$axios.post('/auth', pars, {
             headers: {
-                      'Content-Type': 'application/json',
-            }  
+              'Content-Type': 'application/json',
+            }
           })
-          window.sessionStorage.setItem("token", res.data.token)
           Cookie.set('jwt', res.data.token)
           commit('SET_USER', res.data.token)
-          this.$router.push('/')
-        }catch (error) {
+          this.$router.push('/')          
+        } catch (error) {
           if (error.response && error.response.status === 401) {
             throw new Error('Bad credentials')
           }
           throw error
         }
-      }      
+      }
     }
   })
 }

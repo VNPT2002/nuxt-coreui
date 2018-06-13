@@ -2,6 +2,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  //mode: 'spa',
   head: {
     title: 'NuxtJS - CoreUI',
     meta: [
@@ -39,7 +40,7 @@ module.exports = {
   ** Import Plugin 
    */
   plugins: [
-    { src: '~plugins/bootstrap-vue.js', ssr: true }
+    { src: '~plugins/bootstrap-vue.js', ssr: true } // cho nay nua
   ],
 
   /*
@@ -74,8 +75,8 @@ module.exports = {
   }
   ,
   router: {
-    base:'/',
-    middleware: 'authenticated'
+    base: '/',
+    middleware: 'check-auth'
   },
   modules: [
     '@nuxtjs/axios'
