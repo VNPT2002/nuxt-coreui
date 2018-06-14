@@ -7,7 +7,7 @@ const getQueryParams = () => {
 }
 
 export const getUserFromCookie = (req) => {
-  if (!req.headers.cookie) return
+  if (!req.headers.cookie) return  
   const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='))
   if (!jwtCookie) return
   const jwt = jwtCookie.split('=')[1]

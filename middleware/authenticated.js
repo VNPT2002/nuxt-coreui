@@ -1,6 +1,5 @@
 export default function ({ store, redirect }) { 
-  if (!store.getters.isAuthenticated) {
-    console.log("here")
-    return redirect('/pages/login')
-  }
+   if (!store.getters.isAuthenticated) {    
+     return redirect('/pages/login')
+   }
 }

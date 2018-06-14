@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Cookie from 'js-cookie'
 
+
 Vue.use(Vuex)
 
 const createStore = () => {
@@ -43,7 +44,7 @@ const createStore = () => {
           })
           Cookie.set('jwt', res.data.token)
           commit('SET_USER', res.data.token)
-          this.$router.push('/')          
+          this.$router.push('/')                  
         } catch (error) {
           if (error.response && error.response.status === 401) {
             throw new Error('Bad credentials')
