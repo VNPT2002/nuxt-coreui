@@ -1,20 +1,20 @@
 <template>
   <div class="animated fadeIn">
     <b-row>
-      Hello {{loggedUser}}
+      <b-col sm="12">
+        <c-table hover striped bordered small fixed caption="<i class='fa fa-align-justify'></i> Combined All Table"></c-table>
+      </b-col>
     </b-row>
   </div>
 </template>
 
 <script>
 
-import { mapGetters, mapActions } from 'vuex'
+import cTable from './base/table'
 
 export default {
-  name: 'dashboard',
+  name: 'mcc',
   middleware: 'authenticated',
-  computed: mapGetters([
-    'loggedUser'
-  ]),
+  components: {cTable}
 }
 </script>

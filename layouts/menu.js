@@ -1,13 +1,9 @@
 export default {
   items: [
     {
-      name: 'Dashboard',
+      name: 'MCC',
       url: '/',
-      icon: 'icon-speedometer',
-      badge: {
-        variant: 'primary',
-        text: 'NEW'
-      }
+      icon: 'icon-speedometer'
     },
     {
       title: true,
@@ -208,13 +204,6 @@ export default {
       }
     },
     {
-      divider: true
-    },
-    {
-      title: true,
-      name: 'Extras'
-    },
-    {
       name: 'Pages',
       url: '/pages',
       icon: 'icon-star',
@@ -240,19 +229,6 @@ export default {
           icon: 'icon-star'
         }
       ]
-    },
-    {
-      name: 'Download CoreUI',
-      url: 'http://coreui.io/vue/',
-      icon: 'icon-cloud-download',
-      class: 'mt-auto',
-      variant: 'success'
-    },
-    {
-      name: 'Try CoreUI PRO',
-      url: 'http://coreui.io/pro/vue/',
-      icon: 'icon-layers',
-      variant: 'danger'
     }
   ]
 }
