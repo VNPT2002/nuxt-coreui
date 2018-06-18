@@ -1,4 +1,3 @@
-
 const state = {
   error: null,
   isLoading: false,
@@ -10,7 +9,9 @@ const state = {
 }
 
 const getters = {
-  
+  getToken (state, getters, rootState) {
+    state.token = rootState.authUser
+  }
 }
 
 const mutations = {
@@ -20,10 +21,10 @@ const mutations = {
 }
 
 const actions = {
-  async loadData() {
+  loadData () {
     try {
-      console.log("===================================")
-      
+      console.log('===================================' + state.token)
+
       // const header = {
       //   'Content-Type': 'application/json',
       //   Authorization: `Bearer ${loggedUser}`
@@ -36,7 +37,7 @@ const actions = {
   }
 }
 
-export default {  
+export default {
   namespaced: true,
   state,
   getters,

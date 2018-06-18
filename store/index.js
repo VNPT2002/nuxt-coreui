@@ -6,7 +6,7 @@ import sysuser from './modules/sysuser'
 Vue.use(Vuex)
 
 const createStore = () => {
-  return new Vuex.Store({    
+  return new Vuex.Store({
     modules: {
       login,
       sysuser
