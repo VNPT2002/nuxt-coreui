@@ -10,7 +10,7 @@ const state = {
 
 const getters = {
   getToken (state, getters, rootState) {
-    state.token = rootState.authUser
+    return rootState.authUser
   }
 }
 
@@ -21,9 +21,10 @@ const mutations = {
 }
 
 const actions = {
-  loadData () {
+  loadData ({rootState}) {
     try {
-      console.log('===================================' + state.token)
+      console.log(rootState)
+      console.log(rootState.rootGetters)
 
       // const header = {
       //   'Content-Type': 'application/json',

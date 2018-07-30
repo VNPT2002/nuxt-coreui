@@ -2,7 +2,7 @@
   <div class="animated fadeIn">
     <b-row>
       <b-col sm="12">
-        <c-table hover striped bordered small fixed caption="<i class='fa fa-align-justify'></i> Combined All Table"></c-table>
+        <c-table striped bordered small fixed></c-table>
       </b-col>
     </b-row>
   </div>
@@ -14,7 +14,7 @@ import cTable from './base/table'
 
 export default {
   name: 'mcc',
-  middleware: 'authenticated',
+  //middleware: 'authenticated',
   components: {cTable}
 }
 </script>
